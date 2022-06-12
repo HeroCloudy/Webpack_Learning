@@ -5,6 +5,8 @@ import './style/scss/scss-demo.scss'
 import './style/scss/sass-demo.sass'
 import './style/less/less-demo.less'
 import './style/stylus/stylus-demo.styl'
+import './style/css/iconfont.css'
+import './style/css/img-demo.css'
 
 const result = sum(1, 2, 3, 4, 5)
 console.log(`sum result: ${result}`)

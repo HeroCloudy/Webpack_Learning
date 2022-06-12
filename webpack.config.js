@@ -4,7 +4,8 @@ module.exports = {
   entry: './src/main.js',
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'js/bundle.js',
+    clean: true
   },
   module: {
     rules: [
@@ -38,6 +39,25 @@ module.exports = {
           'css-loader',
           'stylus-loader'
         ]
+      },
+      {
+        test: /\.(avi|mp3|ttf|woff2?)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'resources/[hash:10][ext][query]'
+        }
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg?)$/,
+        type: 'asset',
+        parser: {
+          dataUrlCondition: {
+            maxSize: 10 * 1024
+          }
+        },
+        generator: {
+          filename: 'img/[hash:10][ext][query]'
+        }
       }
     ]
   },
