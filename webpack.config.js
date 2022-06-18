@@ -59,6 +59,11 @@ module.exports = {
         generator: {
           filename: 'img/[hash:10][ext][query]'
         }
+      },
+      {
+        test: /.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader'
       }
     ]
   },
@@ -67,5 +72,5 @@ module.exports = {
       context: path.resolve(__dirname, 'src')
     })
   ],
-  mode: 'production'
+  mode: 'development'
 }
