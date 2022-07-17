@@ -2,6 +2,7 @@ const path = require('path')
 const ESLintWebpackPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin')
 
 const commonPostcssLoader = {
   loader: 'postcss-loader',
@@ -93,7 +94,8 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: 'css/index.css'
-    })
+    }),
+    new CssMinimizerWebpackPlugin()
   ],
   mode: 'development'
 }
