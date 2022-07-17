@@ -3,6 +3,17 @@ const ESLintWebpackPlugin = require('eslint-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
+const commonPostcssLoader = {
+  loader: 'postcss-loader',
+  options: {
+    postcssOptions: {
+      plugins: [
+        'postcss-preset-env'
+      ]
+    }
+  }
+}
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -16,7 +27,8 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader'
+          'css-loader',
+          commonPostcssLoader
         ]
       },
       {
@@ -24,6 +36,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          commonPostcssLoader,
           'sass-loader',
         ]
       },
@@ -32,6 +45,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          commonPostcssLoader,
           'less-loader',
         ]
       },
@@ -40,6 +54,7 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
+          commonPostcssLoader,
           'stylus-loader'
         ]
       },

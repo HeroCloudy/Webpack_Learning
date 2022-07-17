@@ -3,3 +3,7 @@
   height: 80px;
   background: red;
 }
+
+h1 {
+  border-radius: 10px;
+}
