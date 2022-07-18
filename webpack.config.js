@@ -97,5 +97,11 @@ module.exports = {
     }),
     new CssMinimizerWebpackPlugin()
   ],
+  devServer: {
+    port: 9000,
+    host: '0.0.0.0',
+    hot: true
+  },
+  devtool: 'source-map',
   mode: 'development'
 }
